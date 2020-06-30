@@ -5,7 +5,7 @@ HOST_NAME=''
 NEW_USER=''
 NEW_PASS=''
 useradd $NEW_USER
-usermoad -a -G wheel $NEW_USER
+usermod -a -G wheel $NEW_USER
 echo "$NEW_PASS" | passwd --stdin $NEW_USER
 
 #Enable password authentication
