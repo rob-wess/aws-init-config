@@ -28,7 +28,7 @@ source /etc/os-release
 
 if [[ "$NAME" == "Fedora" ]]; then
         dnf install unzip wget vim psmisc setroubleshoot-server bash-completion rsync curl tuned bind-utils firewalld rsync -y
-elif [[ "$NAME" == "CentOS" ]]; then
+elif [[ "$NAME" == "CentOS Linux" ]]; then
         yum install unzip wget vim psmisc setroubleshoot-server bash-completion rsync curl tuned bind-utils firewalld rsync epel-release -y
 fi
 
