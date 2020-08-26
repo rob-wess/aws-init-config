@@ -7,6 +7,8 @@ set -e
 HOST_NAME=''
 NEW_USER=''
 NEW_PASS=''
+HTTP_MOD='True'
+PHP7_MOD='True'
 
 useradd $NEW_USER
 usermod -a -G wheel $NEW_USER
@@ -30,6 +32,14 @@ if [[ "$NAME" == "Fedora" ]]; then
         dnf install unzip wget vim psmisc setroubleshoot-server bash-completion rsync curl tuned bind-utils firewalld rsync -y
 elif [[ "$NAME" == "CentOS Linux" ]]; then
         yum install unzip wget vim psmisc setroubleshoot-server bash-completion rsync curl tuned bind-utils firewalld rsync epel-release -y
+fi
+
+if [[ HTTP_MOD == 'True' ]]; then
+        source ./http_mod.sh
+fi
+
+if [[ PHP7_MOD == 'True' ]]; then
+        source php7_mod.sh
 fi
 
 # Configure Firewalld
